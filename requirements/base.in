@@ -1,0 +1,48 @@
+# *************************************************
+# Django packages
+# *************************************************
+django
+
+# ORM Caching layer for Django Models
+django-cacheops
+
+# Control CORS headers from within the app
+django-cors-headers
+
+# Fast creatin of model instances. May be used in tests
+factory_boy
+
+# Manage time aspects during testing
+freezegun
+
+# Authentication system with 'batteries included'
+django-allauth
+
+# The app provides a tag and filter that lets you quickly render forms
+django-crispy-forms
+
+# filter querysets dynamically
+django-filter
+
+# Ability to work with Postgres' HSTORE extension
+django-hstore
+
+# Raw operations on the image (like to crop avatars etc)
+django-imagekit
+
+# Nice addons to simplify ORM layer
+django-model-utils
+
+
+# APNS and GCM push notifications
+django-push-notifications
+
+
+
+# Django REST Framework
+djangorestframework
+djangorestframework-gis
+djangorestframework-hstore
+drf-nested-routers
+django-taggit-serializer
+django-rest-auth
