@@ -9,7 +9,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
-    'django.contrib.gis',
     'django_filters',
     'django_object_actions',
     'corsheaders',
@@ -21,7 +20,6 @@ INSTALLED_APPS = (
     'opbeat.contrib.django',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_framework_gis',
     'rest_auth',
     'rest_auth.registration',
 )
