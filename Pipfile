@@ -9,6 +9,15 @@ verify_ssl = true
 django = "*"
 gunicorn = "*"
 django-heroku = "*"
+# Django REST Framework
+djangorestframework = "*"
+djangorestframework-gis = "*"
+djangorestframework-hstore = "*"
+drf-nested-routers = "*"
+django-taggit-serializer = "*"
+django-rest-auth = "*"
+# filter querysets dynamically
+django-filter = "*"
 
 
 [requires]

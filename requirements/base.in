@@ -33,10 +33,17 @@ django-imagekit
 # Nice addons to simplify ORM layer
 django-model-utils
 
+# filter querysets dynamically
+django-filter
 
-# APNS and GCM push notifications
-django-push-notifications
+# Bind actions on every object in admin object view
+django-object-actions
 
+# Storage to AWS S3
+django-storages
+
+# opbeat
+opbeat
 
 
 # Django REST Framework

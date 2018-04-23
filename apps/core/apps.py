@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class TstFappConfig(AppConfig):
-    name = 'tst_fapp'
+class CoreConfig(AppConfig):
+    name = 'apps.core'
