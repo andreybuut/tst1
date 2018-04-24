@@ -53,3 +53,4 @@ djangorestframework-hstore
 drf-nested-routers
 django-taggit-serializer
 django-rest-auth
+psycopg2-binary

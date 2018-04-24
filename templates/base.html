@@ -1,0 +1,78 @@
+{% load staticfiles i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}ComChat{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css">
+    {% block css %}
+    {% if debug %}
+    <link href="{% static 'css/vendor.css' %}" rel="stylesheet">
+    <link href="{% static 'css/backend.css' %}"   rel="stylesheet">
+    <link href="{% static 'css/frontend.css' %}"   rel="stylesheet">
+    {% else %}
+    <link href="{% static 'css/frontend.min.css' %}"  rel="stylesheet">
+    <link href="{% static 'css/vendor.min.css' %}"rel="stylesheet">
+    <link href="{% static 'css/backend.min.css' %}"  rel="stylesheet">
+    {% endif %}
+    {% endblock css %}
+  </head>
+
+  <body id="page-top">
+
+    {% block page %}
+    <div class="page">
+      <div class="page__layout">
+        <div class="page__sidebar">
+          {% block sidebar %}
+          {% endblock sidebar %}
+        </div>
+
+        <div class="page__content">
+          {% block content %}
+          {% endblock content %}
+        </div>
+      </div>
+    </div>
+    {% endblock page %}
+
+    <!-- Javascript goes gere -->
+    {% block javascript %}
+    {% if debug %}
+    <script src="{% static 'js/vendor.js' %}"></script>
+    <script src="{% static 'js/backend.js' %}"></script>
+    <script src="{% static 'js/frontend.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
+    <script>
+     svg4everybody({ polyfill: true }); // eslint-disable-line no-undef
+    </script>
+    <script src="//localhost:35729/livereload.js"></script>
+    {% else %}
+    <script src="{% static 'js/vendor.min.js' %}"></script>
+    <script src="{% static 'js/backend.min.js' %}"></script>
+    <script src="{% static 'js/frontend.min.js' %}"></script>
+    <script src="{% static 'js/common.min.js' %}"></script>
+    {% endif %}
+    {% endblock javascript %}
+
+    <!--
+         // Javascript specific for current open page
+         // You should place here all jquery or import modules
+         // require for functiong UI of the current page
+         // require('module/goes/here');
+    -->
+    {% block ui_logic %}
+    {% endblock ui_logic %}
+  </body>
+</html>

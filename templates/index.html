@@ -1,1 +1,46 @@
-<h1>HELLO world</h1>
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="container">
+  <header class="masthead">
+    <div class="container">
+      <img class="img-fluid"
+        src="{% static "img/profile.png" %}"
+        alt="">
+    </div>
+  </header>
+  <body>
+    <div class="container">
+      <div id="v-app">
+        <p><% message %></p>
+        <button
+          v-on:click="reverseMessage"
+          class="btn">ReverseMessame
+        </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="app-4">
+        <ol>
+          <li v-for="todo in todos">
+            <% todo.text %>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div id="components-demo">
+      <button-counter class="btn-info"></button-counter>
+    </div>
+  </body>
+</div>
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
+
+{% block ui_logic %}
+  <script>
+    require('f/home/index');
+  </script>
+{% endblock ui_logic %}
