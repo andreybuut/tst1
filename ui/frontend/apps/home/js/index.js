@@ -7,10 +7,13 @@
  */
 
 import Vue from 'vue';
+import App from 's/App';
+
+console.log(App,'@@@@!!!!!');
 
 function init(){
   console.log('main page');
-  var app = new Vue({
+  var app1 = new Vue({
     delimiters: ['<%', '%>'],
     el: '#v-app',
     data: {
@@ -47,6 +50,14 @@ function init(){
   });
 
   new Vue({ el: '#components-demo' })
+
+  const app = new Vue({
+    components: {
+      App,
+    },
+    template: '<App/>',
+  });
+
 
 }
 

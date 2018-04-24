@@ -8,6 +8,8 @@ let jsFkey = 'js/frontend.js';
 let jsBkey = 'js/backend.js';
 let jsVkey = 'js/vendor.js';
 let jsCkey = 'js/common.js';
+let vueFkey = 'js/vue_frontend.js';
+let vueCkey = 'css/vue_frontend.css';
 let cssFkey = 'css/frontend.css';
 let cssBkey = 'css/backend.css';
 let cssVkey = 'css/vendor.css';
@@ -18,9 +20,11 @@ if (production) {
   jsBkey = 'js/backend.min.js';
   jsVkey = 'js/vendor.min.js';
   jsCkey = 'js/common.min.js';
+  vueFkey = 'js/vue_frontend.min.js';
   cssFkey = 'css/frontend.min.css';
   cssBkey = 'css/backend.min.css';
   cssVkey = 'css/vendor.min.css';
+  vueCkey = 'css/vue_frontend.min.css';
 }
 
 // -------------------------------------------------------
@@ -40,7 +44,8 @@ exports.files = {
       [jsFkey]: /^ui\/frontend/,
       [jsBkey]: /^ui\/backend/,
       [jsCkey]: /^ui\/common/,
-      [jsVkey]: /^node_modules/
+      [jsVkey]: /^node_modules/,
+      [vueFkey]: /^ui\/src/,
     }
   },
   stylesheets: {
@@ -90,6 +95,10 @@ exports.plugins = {
   babel: {
     presets: ['es2015'],
     ignore: [/^ui\/[a-z0-9_\\/]+\/vendor\//, /node_modules/]
+  },
+  vue: {
+    extractCSS: true,
+    out: `./.ui/${vueCkey}`,
   },
   autoReload: {
     enabled: true
@@ -168,6 +177,7 @@ exports.modules = {
       .replace(/^ui\/frontend\/apps\//, 'f/')
       .replace(/^ui\/frontend\/common\/js\//, 'fc/')
       .replace(/^ui\/backend\/apps\//, 'b/')
+      .replace(/^ui\/src\//, 's/')
       .replace(/^ui\/backend\/common\/js\//, 'bc/')
       .replace(/\/js\//, '/')
       .replace(/\/\//, '/');
