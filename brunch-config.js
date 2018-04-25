@@ -4,6 +4,8 @@
 const environment = process.env.NODE_ENV;
 const production = environment === 'production';
 
+console.log(environment, 'ENV');
+
 let jsFkey = 'js/frontend.js';
 let jsBkey = 'js/backend.js';
 let jsVkey = 'js/vendor.js';
@@ -52,6 +54,7 @@ exports.files = {
     joinTo: {
       [cssFkey]: /^ui\/frontend\/apps\/apps.scss/,
       [cssBkey]: /^ui\/backend\/apps\/apps.scss/,
+      [vueCkey]: /^ui\/src\/assets\/scss\/app.scss/,
       [cssVkey]: /^node_modules/
     }
   }

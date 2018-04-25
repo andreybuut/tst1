@@ -21,10 +21,12 @@
     <link href="{% static 'css/vendor.css' %}" rel="stylesheet">
     <link href="{% static 'css/backend.css' %}"   rel="stylesheet">
     <link href="{% static 'css/frontend.css' %}"   rel="stylesheet">
+    <link href="{% static 'css/vue_frontend.css' %}"   rel="stylesheet">
     {% else %}
     <link href="{% static 'css/frontend.min.css' %}"  rel="stylesheet">
     <link href="{% static 'css/vendor.min.css' %}"rel="stylesheet">
     <link href="{% static 'css/backend.min.css' %}"  rel="stylesheet">
+    <link href="{% static 'css/vue_frontend.min.css' %}"   rel="stylesheet">
     {% endif %}
     {% endblock css %}
   </head>
@@ -36,6 +38,8 @@
       <div class="page__layout">
         <div class="page__sidebar">
           {% block sidebar %}
+          {{ debug }} ds1
+
           {% endblock sidebar %}
         </div>
 

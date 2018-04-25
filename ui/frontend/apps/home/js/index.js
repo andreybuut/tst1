@@ -52,6 +52,7 @@ function init(){
   new Vue({ el: '#components-demo' })
 
   const app = new Vue({
+    el: '#app',
     components: {
       App,
     },
