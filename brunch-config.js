@@ -33,8 +33,8 @@ if (production) {
 // Brunch paths
 // =======================================================
 exports.paths = {
-  watched: ['ui'],
-  public: '.ui'
+  watched: ['ui', ],
+  public:  '.ui',
 };
 
 // -------------------------------------------------------
@@ -43,21 +43,21 @@ exports.paths = {
 exports.files = {
   javascripts: {
     joinTo: {
-      [jsFkey]: /^ui\/frontend/,
-      [jsBkey]: /^ui\/backend/,
-      [jsCkey]: /^ui\/common/,
-      [jsVkey]: /^node_modules/,
+      [jsFkey]:  /^ui\/frontend/,
+      [jsBkey]:  /^ui\/backend/,
+      [jsCkey]:  /^ui\/common/,
+      [jsVkey]:  /^node_modules/,
       [vueFkey]: /^ui\/src/,
-    }
+    },
   },
   stylesheets: {
     joinTo: {
       [cssFkey]: /^ui\/frontend\/apps\/apps.scss/,
       [cssBkey]: /^ui\/backend\/apps\/apps.scss/,
       [vueCkey]: /^ui\/src\/assets\/scss\/app.scss/,
-      [cssVkey]: /^node_modules/
-    }
-  }
+      [cssVkey]: /^node_modules/,
+    },
+  },
 };
 
 // -------------------------------------------------------
@@ -66,92 +66,92 @@ exports.files = {
 exports.npm = {
   enabled: true,
   globals: {
-    $: 'jquery',
-    jQuery: 'jquery',
-    bootstrap: 'bootstrap',
-    selectpicker: 'bootstrap-select',
-    datepicker: 'bootstrap-datepicker',
-    table: 'bootstrap-table',
+    $:             'jquery',
+    jQuery:        'jquery',
+    bootstrap:     'bootstrap',
+    selectpicker:  'bootstrap-select',
+    datepicker:    'bootstrap-datepicker',
+    table:         'bootstrap-table',
     svg4everybody: 'svg4everybody',
   },
   aliases: {
-    'vue': 'vue/dist/vue.common.js',
+    vue: 'vue/dist/vue.common.js',
   },
   styles: {
-    bootstrap: ['dist/css/bootstrap.css'],
-    'bootstrap-select': ['dist/css/bootstrap-select.css'],
-    'select2-bootstrap-theme': ['dist/select2-bootstrap.css'],
-    'bootstrap-datepicker': ['dist/css/bootstrap-datepicker.css'],
-    'bootstrap-table': ['dist/bootstrap-table.css'],
-    'font-awesome': ['css/font-awesome.css'],
-  }
+    bootstrap:                 ['dist/css/bootstrap.css', ],
+    'bootstrap-select':        ['dist/css/bootstrap-select.css', ],
+    'select2-bootstrap-theme': ['dist/select2-bootstrap.css', ],
+    'bootstrap-datepicker':    ['dist/css/bootstrap-datepicker.css', ],
+    'bootstrap-table':         ['dist/bootstrap-table.css', ],
+    'font-awesome':            ['css/font-awesome.css', ],
+  },
 };
 
 exports.conventions = {
   // Source SVG files should be placed under assets.
-  assets: /^(ui\/frontend\/common\/assets\/(?!svg))/
+  assets: /^(ui\/frontend\/common\/assets\/(?!svg))/,
 };
 // -------------------------------------------------------
 // Define plugins options
 // =======================================================
 exports.plugins = {
   babel: {
-    presets: ['es2015'],
-    ignore: [/^ui\/[a-z0-9_\\/]+\/vendor\//, /node_modules/]
+    presets: ['es2015', ],
+    ignore:  [ /^ui\/[a-z0-9_\\/]+\/vendor\//, /node_modules/, ],
   },
   vue: {
     extractCSS: true,
-    out: `./.ui/${vueCkey}`,
+    out:        `./.ui/${vueCkey}`,
   },
   autoReload: {
-    enabled: true
+    enabled: true,
   },
   sass: {
-    mode: 'native',
-    sourceMapEmbed: true
+    mode:           'native',
+    sourceMapEmbed: true,
   },
   copycat: {
     fonts: [
       'node_modules/font-awesome/fonts',
       'node_modules/bootstrap/dist/fonts',
-      './ui/backend/common/assets/fonts'
+      './ui/backend/common/assets/fonts',
     ],
-    verbose: false,
-    onlyChanged: true
+    verbose:     false,
+    onlyChanged: true,
   },
   cleancss: {
     keepSpecialComments: 0,
-    removeEmpty: true
+    removeEmpty:         true,
   },
   svgsprite: {
     shape: {
       transform: [{
         svgo: {
           plugins: [
-            { sortAttrs: true },
-            { removeTitle: true },
-            { removeRasterImages: true },
-            { removeStyleElement: true },
-            { removeAttrs: { attrs: '(class|fill-rule|stroke-miterlimit)' } }
+            { sortAttrs: true, },
+            { removeTitle: true, },
+            { removeRasterImages: true, },
+            { removeStyleElement: true, },
+            { removeAttrs: { attrs: '(class|fill-rule|stroke-miterlimit)', }, },
           ],
-          js2svg: { pretty: true, indent: 4 }
-        }
-      }]
+          js2svg: { pretty: true, indent: 4, },
+        },
+      }, ],
     },
     svg: {
-      xmlDeclaration: false,
+      xmlDeclaration:     false,
       doctypeDeclaration: false,
-      precision: 3,
-      transform: [
+      precision:          3,
+      transform:          [
         function (svg) {
           return svg.replace(/<symbol/gi, '\n  <symbol').replace(/<\/symbol>/gi, '  </symbol>\n');
-        }
-      ]
+        },
+      ],
     },
     mode: {
-      symbol: { dest: './.ui/', sprite: 'img/sprite.svg' }
-    }
-  }
+      symbol: { dest: './.ui/', sprite: 'img/sprite.svg', },
+    },
+  },
 };
 
 // -------------------------------------------------------
@@ -160,7 +160,7 @@ exports.plugins = {
 // =======================================================
 exports.watcher = {
   awaitWriteFinish: true,
-  usePolling: true
+  usePolling:       true,
 };
 
 
@@ -186,8 +186,8 @@ exports.modules = {
       .replace(/\/\//, '/');
   },
   autoRequire: {
-    [jsFkey]: ['fc/index'],
-    [jsBkey]: ['bc/index']
-  }
+    [jsFkey]: ['fc/index', ],
+    [jsBkey]: ['bc/index', ],
+  },
 };
 

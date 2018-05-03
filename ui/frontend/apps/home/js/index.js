@@ -5,61 +5,60 @@
  * @license mit
  * initialization file for main page
  */
-
 import Vue from 'vue';
 import App from 's/App';
 
-console.log(App,'@@@@!!!!!');
-
-function init(){
+function init () {
   console.log('main page');
-  var app1 = new Vue({
-    delimiters: ['<%', '%>'],
-    el: '#v-app',
-    data: {
-      message: 'Hello Vue!!!!!!'
+
+  const app1 = new Vue({
+    el:         '#v-app',
+    delimiters: [ '<%', '%>', ],
+    data:       {
+      message: 'Hello Vue!!!!!!',
     },
     methods: {
-      reverseMessage: function() {
-        this.message = this.message.split('').reverse().join('');
-      }
-    }
+      reverseMessage () {
+        this.message = this.message
+          .split('')
+          .reverse()
+          .join('');
+      },
+    },
   });
   const appFor = new Vue({
-    delimiters: ['<%', '%>'],
-    el: '#app-4',
-    data: {
+    el:         '#app-4',
+    delimiters: [ '<%', '%>', ],
+    data:       {
       todos: [
-        { text: 'Create hello Vue with js and Django' },
-        { text: 'Create component for main page' },
-        { text: 'Create dynamically changed list' },
-      ]
-    }
-
+        { text: 'Create hello Vue with js and Django', },
+        { text: 'Create component for main page', },
+        { text: 'Create dynamically changed list', },
+      ],
+    },
   });
 
   // Define a new component called button-counter
   // simple button component
   Vue.component('button-counter', {
-    data: function () {
+    data () {
       return {
-        count: 0
+        count: 0,
       };
     },
-    template: '<button v-on:click="count++">You clicked me {{ count }}</button>'
+    template:
+      '<button v-on:click="count++">You clicked me {{ count }}</button>',
   });
 
-  new Vue({ el: '#components-demo' })
+  new Vue({ el: '#components-demo', });
 
   const app = new Vue({
-    el: '#app',
+    el:         '#app',
     components: {
       App,
     },
     template: '<App/>',
   });
-
-
 }
 
 init();

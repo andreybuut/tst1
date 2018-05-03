@@ -45,7 +45,7 @@ const production = Object.assign({}, common, {
  * Returns the configuration based on domain
  * @returns {object}
  */
-function getConfig() {
+function getConfig () {
   switch (window.location.hostname) {
     case 'localhost': // fallthrough
 
@@ -81,7 +81,7 @@ const config = Object.assign({}, getConfig());
  *
  * @param {str} key - config's key
  */
-function getItem(key) {
+function getItem (key) {
   return key in config ? config[key] : null;
 }
 
@@ -93,7 +93,7 @@ function getItem(key) {
  * @param {str} key - config's key
  * @param {str|number|boolean} value - config's key value
  */
-function setItem(key, value) {
+function setItem (key, value) {
   config[key] = value;
 }
 
