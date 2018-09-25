@@ -15,4 +15,5 @@ STATICFILES_FINDERS = (
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, ".ui"),
 )
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 print(STATICFILES_DIRS, '@@@@@@@@@@@@@')
