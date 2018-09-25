@@ -73,6 +73,7 @@ exports.npm = {
     datepicker:    'bootstrap-datepicker',
     table:         'bootstrap-table',
     svg4everybody: 'svg4everybody',
+    vuetify:       'vuetify',
   },
   aliases: {
     vue: 'vue/dist/vue.common.js',
@@ -84,6 +85,12 @@ exports.npm = {
     'bootstrap-datepicker':    ['dist/css/bootstrap-datepicker.css', ],
     'bootstrap-table':         ['dist/bootstrap-table.css', ],
     'font-awesome':            ['css/font-awesome.css', ],
+    vuetify:                   ['dist/vuetify.css',],
+    // 'material-design-icons-iconfont': [
+    //   'dist/material-design-icons.css',
+    //   'dist/material-design-icons.scss',
+    //   'dist/fonts/material-icons.css',
+    // ],
   },
 };
 
@@ -111,10 +118,11 @@ exports.plugins = {
     sourceMapEmbed: true,
   },
   copycat: {
-    fonts: [
+    'css/fonts': [
       'node_modules/font-awesome/fonts',
       'node_modules/bootstrap/dist/fonts',
       './ui/backend/common/assets/fonts',
+      'node_modules/material-design-icons-iconfont/dist/fonts',
     ],
     verbose:     false,
     onlyChanged: true,
@@ -163,7 +171,6 @@ exports.watcher = {
   usePolling:       true,
 };
 
-
 // -------------------------------------------------------
 // Modules configuration
 // see: http://brunch.io/docs/config#-modules-
@@ -174,7 +181,7 @@ exports.watcher = {
 // =======================================================
 
 exports.modules = {
-  nameCleaner(path) {
+  nameCleaner (path) {
     return path
       .replace(/^ui\/common\/js\//, 'c/')
       .replace(/^ui\/frontend\/apps\//, 'f/')

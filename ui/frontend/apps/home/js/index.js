@@ -7,58 +7,15 @@
  */
 import Vue from 'vue';
 import App from 's/App';
+import router from 's/router';
 
-function init () {
-  console.log('main page');
+const app = new Vue({
+  router,
+  components: {
+    App,
+  },
+  template: '<App/>',
+});
 
-  const app1 = new Vue({
-    el:         '#v-app',
-    delimiters: [ '<%', '%>', ],
-    data:       {
-      message: 'Hello Vue!!!!!!',
-    },
-    methods: {
-      reverseMessage () {
-        this.message = this.message
-          .split('')
-          .reverse()
-          .join('');
-      },
-    },
-  });
-  const appFor = new Vue({
-    el:         '#app-4',
-    delimiters: [ '<%', '%>', ],
-    data:       {
-      todos: [
-        { text: 'Create hello Vue with js and Django', },
-        { text: 'Create component for main page', },
-        { text: 'Create dynamically changed list', },
-      ],
-    },
-  });
+app.$mount('#app');
 
-  // Define a new component called button-counter
-  // simple button component
-  Vue.component('button-counter', {
-    data () {
-      return {
-        count: 0,
-      };
-    },
-    template:
-      '<button v-on:click="count++">You clicked me {{ count }}</button>',
-  });
-
-  new Vue({ el: '#components-demo', });
-
-  const app = new Vue({
-    el:         '#app',
-    components: {
-      App,
-    },
-    template: '<App/>',
-  });
-}
-
-init();
