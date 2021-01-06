@@ -102,7 +102,7 @@
   },
   "dependencies": {
     "alertify.js": "^1.0.12",
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "bootstrap": "~3.3.7",
     "bootstrap-datepicker": "^1.7.1",
     "bootstrap-select": "^1.12.4",
